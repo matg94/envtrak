@@ -1,8 +1,6 @@
 package resources
 
 import (
-    "gopkg.in/yaml.v3"
-    "encoding/json"
     "fmt"
 )
 
@@ -18,21 +16,6 @@ func (e *Environment) GetId() string {
     return fmt.Sprintf("%s-%s-%s", e.Alias, e.Dtap, e.BusinessId) 
 }
 
-func (e *Environment) GetYaml() string {
-    res, err := yaml.Marshal(&e)
-    if err != nil {
-        return ""
-    }
-    return string(res)
-}
-
-func (e *Environment) GetJson() string{
-    res, err := json.Marshal(&e)
-    if err != nil {
-        return ""
-    }
-    return string(res)
-} 
 func (e *Environment) GetRow() []string {
     return []string{
         e.BusinessId,

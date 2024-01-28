@@ -13,7 +13,7 @@ func TestEnvironmentGetYaml(t *testing.T) {
 
     expectedYaml := "dtap: dtap\nbusiness-id: test\nalias: use1\nregion: us-east-1\n"
 
-    assert.Equal(t, expectedYaml, env.GetYaml(), "Expected yaml to match")
+    assert.Equal(t, expectedYaml, ToYaml(env), "Expected yaml to match")
 }
 
 func TestEnvironmentGetJson(t *testing.T) {
@@ -25,7 +25,7 @@ func TestEnvironmentGetJson(t *testing.T) {
         Region: "us-east-1",
     }
     expectedJson := "{\"dtap\":\"dtap\",\"businessId\":\"test\",\"alias\":\"use1\",\"region\":\"us-east-1\"}"
-    assert.Equal(t, expectedJson, env.GetJson(), "Expected json to match")
+    assert.Equal(t, expectedJson, ToJson(env), "Expected json to match")
 } 
 
 func TestEnvironmentGetRow(t *testing.T) {
