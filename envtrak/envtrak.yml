@@ -1,0 +1,10 @@
+environments: &default-envs
+  - buiness: testEnv
+    dtap: testDtap
+    alias: testAlias
+    gitlab-name: Test Env
+
+services:
+  - app-id: cli
+    gitlab-project-id: 51005186
+    environments: *default-envs
